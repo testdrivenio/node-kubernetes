@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  labels:
+    service: postgres
+spec:
+  selector:
+    service: postgres
+  type: ClusterIP
+  ports:
+  - port: 5432

@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+
+  web:
+    build: .
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:10.5-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=todos
+    expose:
+      - 5432

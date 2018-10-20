@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node
+  labels:
+    name: node
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: node
+        image: gcr.io/<PROJECT_ID>/node-kubernetes:v0.0.1 # update
+        env:
+        - name: NODE_ENV
+          value: "development"
+        - name: PORT
+          value: "3000"
+      restartPolicy: Always
