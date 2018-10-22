@@ -170,7 +170,7 @@ $ kubectl delete -f ./kubernetes/volume-claim.yaml
 $ kubectl delete -f ./kubernetes/postgres-deployment.yaml
 $ kubectl delete -f ./kubernetes/postgres-service.yaml
 
-$ gcloud compute disks delete pg-data-disk
 $ gcloud container clusters delete node-kubernetes
+$ gcloud compute disks delete pg-data-disk
 $ gcloud container images delete gcr.io/<PROJECT_ID>/node-kubernetes:v0.0.1
 ```
