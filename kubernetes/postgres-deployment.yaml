@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
@@ -6,6 +6,9 @@ metadata:
     name: database
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      service: postgres
   template:
     metadata:
       labels:
@@ -13,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:10.5-alpine
+        image: postgres:12-alpine
         volumeMounts:
         - name: postgres-volume-mount
           mountPath: /var/lib/postgresql/data
