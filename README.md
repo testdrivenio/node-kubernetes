@@ -50,7 +50,7 @@ Create a cluster on [Kubernetes Engine](https://console.cloud.google.com/kuberne
 
 ```sh
 $ gcloud container clusters create node-kubernetes \
-    --num-nodes=3 --zone us-central1-a --machine-type f1-micro
+    --num-nodes=3 --zone us-central1-a --machine-type g1-small
 ```
 
 Connect the `kubectl` client to the cluster:
@@ -170,7 +170,7 @@ $ kubectl delete -f ./kubernetes/volume-claim.yaml
 $ kubectl delete -f ./kubernetes/postgres-deployment.yaml
 $ kubectl delete -f ./kubernetes/postgres-service.yaml
 
-$ gcloud container clusters delete node-kubernetes
-$ gcloud compute disks delete pg-data-disk
+$ gcloud container clusters delete node-kubernetes --zone us-central1-a
+$ gcloud compute disks delete pg-data-disk --zone us-central1-a
 $ gcloud container images delete gcr.io/<PROJECT_ID>/node-kubernetes:v0.0.1
 ```
