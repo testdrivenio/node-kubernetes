@@ -1,6 +1,6 @@
 const POSTGRES_USER = process.env.POSTGRES_USER;
 const POSTGRES_PASSWORD = process.env.POSTGRES_PASSWORD;
-const DATABASE_URL = `postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/todos`
+const DATABASE_URL = `postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/todos`
 
 
 module.exports = {

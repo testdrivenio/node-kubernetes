@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:12-alpine
+        image: postgres:14-alpine
         volumeMounts:
         - name: postgres-volume-mount
           mountPath: /var/lib/postgresql/data
